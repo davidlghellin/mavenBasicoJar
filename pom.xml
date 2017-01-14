@@ -16,6 +16,20 @@
 		<sourceDirectory>src</sourceDirectory>
 		<finalName>${project.name}</finalName>
 
+		<!-- Anyadir ficheros a la ruta especificada (o al directorio raiz del jar)-->
+		<resources>
+			<resource>
+				<directory>Recursos</directory>
+				<targetPath>mis/recursos</targetPath>
+				<excludes>
+					<exclude>*.id</exclude>
+				</excludes>
+				<includes>
+					<include>*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -40,8 +54,17 @@
 					</archive>
 				</configuration>
 			</plugin>
-		</plugins>
 
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 	<dependencies>
