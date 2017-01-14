@@ -6,7 +6,11 @@ public class HolaMaven
 	{
 		System.out.println("Hola maven");
 		saluda();
+		
+		ClaseSaluda claseSaluda = new ClaseSaluda();
+		claseSaluda.saludaEnClase("David");
 	}
+	
 	private static void saluda()
 	{
 		System.out.println("¿qué tal?");
